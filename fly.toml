@@ -1,0 +1,15 @@
+app = "neuer"
+primary_region = "fra"
+
+[build]
+
+[http_service]
+  internal_port = 8080
+  force_https = true
+  auto_stop_machines = false
+  auto_start_machines = true
+  min_machines_running = 1
+  processes = ["app"]
+
+[processes]
+  app = "php -S 0.0.0.0:8080 -t /app"
